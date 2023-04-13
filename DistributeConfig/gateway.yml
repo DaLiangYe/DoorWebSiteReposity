@@ -9,4 +9,4 @@ spring:
           uri: http://127.0.0.1:8002
           predicates:
             #- PrefixPath=/api
-		- Path=/api/{segment}
+            - Path=/api/{segment}
