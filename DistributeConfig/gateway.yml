@@ -8,4 +8,5 @@ spring:
         - id: clientno1_router
           uri: http://127.0.0.1:8002
           predicates:
-            - PrefixPath=/api
+            #- PrefixPath=/api
+		- Path=/api/{segment}
