@@ -12,26 +12,36 @@ spring:
           uri: http://127.0.0.1:8011
           predicates:
             - Path=/article/{segment}
+          filters:
+            - StripPrefix=1
         #路由至comment
         - id: client_comment_router
           uri: http://127.0.0.1:8012
           predicates:
             - Path=/comment/{segment}
+          filters:
+            - StripPrefix=1
         #路由至index
         - id: client_index_router
           uri: http://127.0.0.1:8013
           predicates:
             - Path=/index/{segment}
+          filters:
+            - StripPrefix=1
         #路由至user
         - id: client_user_router
           uri: http://127.0.0.1:8014
           predicates:
             - Path=/user/{segment}
+          filters:
+            - StripPrefix=1
         #路由至config
         - id: client_config_router
           uri: http://127.0.0.1:8002
           predicates:
             - Path=/config/{segment}
+          filters:
+            - StripPrefix=1 
 eureka:
   client:
     serviceUrl:
