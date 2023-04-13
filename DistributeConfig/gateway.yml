@@ -35,13 +35,6 @@ spring:
             - Path=/user/{segment}
           filters:
             - StripPrefix=1
-        #路由至config
-        - id: client_config_router
-          uri: http://127.0.0.1:8002
-          predicates:
-            - Path=/config/{segment}
-          filters:
-            - StripPrefix=1 
 eureka:
   client:
     serviceUrl:
