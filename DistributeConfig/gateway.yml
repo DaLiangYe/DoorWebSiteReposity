@@ -27,6 +27,11 @@ spring:
           uri: http://127.0.0.1:8014
           predicates:
             - Path=/user/{segment}
+        #路由至config
+        - id: client_config_router
+          uri: http://127.0.0.1:8002
+          predicates:
+            - Path=/config/{segment}
 eureka:
   client:
     serviceUrl:
