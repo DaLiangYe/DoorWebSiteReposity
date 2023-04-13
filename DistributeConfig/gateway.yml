@@ -1,0 +1,11 @@
+server:
+  port: 8003
+spring:
+  cloud:
+    #接入gateway组件
+    gateway:
+      routes:
+        - id: clientno1_router
+          uri: http://127.0.0.1:8002
+          predicates:
+            - PrefixPath=/api
