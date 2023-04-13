@@ -7,11 +7,26 @@ spring:
     #接入gateway组件
     gateway:
       routes:
+        #路由至article
         - id: clientno1_router
-          uri: http://127.0.0.1:8002
+          uri: http://127.0.0.1:8011
           predicates:
-            #- PrefixPath=/api
-            - Path=/api/{segment}
+            - Path=/article/{segment}
+        #路由至comment
+        - id: clientno1_router
+          uri: http://127.0.0.1:8012
+          predicates:
+            - Path=/comment/{segment}
+        #路由至index
+        - id: clientno1_router
+          uri: http://127.0.0.1:8013
+          predicates:
+            - Path=/index/{segment}
+        #路由至user
+        - id: clientno1_router
+          uri: http://127.0.0.1:8014
+          predicates:
+            - Path=/user/{segment}
 eureka:
   client:
     serviceUrl:
