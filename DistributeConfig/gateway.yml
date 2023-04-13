@@ -1,6 +1,8 @@
 server:
   port: 8003
 spring:
+  application:
+    name: gateway
   cloud:
     #接入gateway组件
     gateway:
@@ -10,3 +12,11 @@ spring:
           predicates:
             #- PrefixPath=/api
             - Path=/api/{segment}
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+  instance:
+    preferIpAddress: true
+    hostname: ${spring.cloud.client.ip-address}
+    instanceId: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
