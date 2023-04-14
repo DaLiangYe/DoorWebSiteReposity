@@ -1,0 +1,5 @@
+spring:
+  redis:
+    host: 139.9.211.14
+    port: 6379
+    password:Cheng@1997
