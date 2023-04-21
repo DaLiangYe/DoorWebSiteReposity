@@ -1,0 +1,16 @@
+server:
+  port: 8001
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    #是否以IP注册到注册中心，Eureka默认以hostname注册
+    preferIpAddress: true
+    hostname: ${spring.cloud.client.ip-address}
+    instanceId: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      #注册中心默认地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

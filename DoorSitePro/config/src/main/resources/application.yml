@@ -1,0 +1,33 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: configApp
+  profiles:
+    active: dev
+  #以下为本地仓库的配置策略
+  cloud:
+    config:
+      server:
+        git:
+          uri: D:\Code_Project\DoorWebSiteReposityGit
+          search-paths: DistributeConfig
+        label: main
+  #以下为远程仓库直拉取的策略 集成失败
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/DaLiangYe/xxxx
+#          username:
+#          password:
+#          timeout: 300
+#        label: main
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+  instance:
+    preferIpAddress: true
+    hostname: ${spring.cloud.client.ip-address}
+    instanceId: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}

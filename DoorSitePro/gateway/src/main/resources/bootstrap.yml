@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+  cloud:
+    config:
+      profile: dev
+      name: gateway #配置文件名称，多个文件用英文逗号隔开
+      label: main #git仓库分支名称
+      uri: http://127.0.0.1:8002
