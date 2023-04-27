@@ -29,6 +29,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <!-- do something update -->
     <dependencyManagement>
         <dependencies>
             <dependency>
